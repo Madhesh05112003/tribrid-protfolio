@@ -1,6 +1,7 @@
 import { imageAlts, imageWidths } from "@/content/project";
 
-const BASE = "/media/img";
+const ROOT = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const BASE = `${ROOT}/media/img`;
 
 type ImgProps = {
   slug: string;
@@ -62,7 +63,7 @@ export function Clip({ slug, title, className = "", poster = true }: VideoProps)
   return (
     <video
       className={className}
-      poster={poster ? `/media/vid/${slug}-poster.webp` : undefined}
+      poster={poster ? `${ROOT}/media/vid/${slug}-poster.webp` : undefined}
       muted
       loop
       playsInline
@@ -71,8 +72,8 @@ export function Clip({ slug, title, className = "", poster = true }: VideoProps)
       aria-label={title}
       disablePictureInPicture
     >
-      <source src={`/media/vid/${slug}.webm`} type="video/webm" />
-      <source src={`/media/vid/${slug}.mp4`} type="video/mp4" />
+      <source src={`${ROOT}/media/vid/${slug}.webm`} type="video/webm" />
+      <source src={`${ROOT}/media/vid/${slug}.mp4`} type="video/mp4" />
     </video>
   );
 }

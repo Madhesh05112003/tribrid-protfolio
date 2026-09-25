@@ -3,15 +3,17 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Img } from "@/components/ui/Media";
 import { project } from "@/content/project";
 
+const ROOT = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const docs = [
   {
-    href: "/docs/tribrid-project-report.pdf",
+    href: `${ROOT}/docs/tribrid-project-report.pdf`,
     title: "Full project report",
     meta: "85 pages · design, methodology, circuit schematics, testing",
     cta: "Open PDF",
   },
   {
-    href: "/docs/tribrid-research-paper.pdf",
+    href: `${ROOT}/docs/tribrid-research-paper.pdf`,
     title: "Research paper",
     meta: "Self-Recharging Solar Tri-Brid Vehicle with Integrated IoT Electric, Petrol and LPG Systems",
     cta: "Open PDF",
